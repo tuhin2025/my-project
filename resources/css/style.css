@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7f6;
+}
+
+/* Navbar */
+.navbar {
+    background: #198754;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #eaffea !important;
+    margin-left: 10px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero h2 {
+    color: #198754;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.btn-custom {
+    background: #198754;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.btn-custom:hover {
+    background: #146c43;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background: #198754;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: underline;
+}
+
+.profile-img {
+    width: 100%;
+    border-radius: 15px;
+}

@@ -17,22 +17,13 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', function () {    return view('home');});
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', function () {    return view('about');});
 
-Route::get('/skills', function () {
-    return view('skills');
-});
+Route::get('/skills', function () {    return view('skills');});
 
-Route::get('/projects', function () {
-    return view('projects');
-});
+Route::get('/projects', function () {    return view('projects');});
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', function () {    return view('contact');});
+Route::get('/contact', function () {    return view('contact');});

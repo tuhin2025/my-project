@@ -2,11 +2,17 @@
 <html>
 <head>
     <title>My Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
 
-<!-- 🔷 Header / Navbar -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<!-- 🔷 Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container">
         <a class="navbar-brand" href="/">Tuhin Portfolio</a>
@@ -27,9 +33,14 @@
     </div>
 </nav>
 
-<!-- 🔷 Main Content -->
-<div class="container mt-4 mb-5">
+<!-- 🔷 Content -->
+<div class="container mt-4 mb-5 flex-grow-1">
     @yield('content')
+</div>
+
+<!-- 🔷 Content -->
+<div class="container mt-4 mb-5 flex-grow-1">
+    @yield('content1')
 </div>
 
 <!-- 🔻 Footer -->
@@ -44,11 +55,8 @@
     </div>
 </footer>
 
-<!-- Bootstrap JS (for navbar toggle) -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
-
-<body class="d-flex flex-column min-vh-100">

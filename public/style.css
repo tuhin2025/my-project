@@ -1,0 +1,44 @@
+h1 {
+    color: #7abaff !important;
+    text-align: left !important;
+}
+
+.about-text {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.head{
+
+    color: #2ca02c;
+}
+
+
+
+.card {
+    border-radius: 12px;
+}
+
+.form-control {
+    border-radius: 8px;
+}
+
+button.btn-success {
+    font-weight: bold;
+}
+
+
+custom-card {
+    background: linear-gradient(135deg, #7abaff, #6f42c1);
+    color: white;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
