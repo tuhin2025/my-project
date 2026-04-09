@@ -16,23 +16,23 @@
                     <form action="#" method="POST">
 
                         <div class="mb-3">
-                            <label class="form-label">Your Name</label>
-                            <input type="text" class="form-control" placeholder="Enter your name">
+                            <label class="form-label">Your Name <span class="text-danger">*</span> </label>
+                            <input type="text" class="form-control" placeholder="Enter your name" required>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <label class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Subject</label>
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <label class="form-label">Subject <span class="text-danger">*</span> </label>
+                            <input type="text" class="form-control" placeholder="Subject" required>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-control" rows="5" placeholder="Write your message"></textarea>
+                            <label class="form-label">Message <span class="text-danger">*</span> </label>
+                            <textarea class="form-control" rows="5" placeholder="Write your message" required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100">

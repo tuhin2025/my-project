@@ -17,13 +17,30 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', function () {    return view('home');});
 
-Route::get('/about', function () {    return view('about');});
+use App\Http\Controllers\MyPortfolioController;
 
-Route::get('/skills', function () {    return view('skills');});
+//Route::group(['prefix' => 'my-portfolio', 'as' => 'my-portfolio.'], function () {
+//
+//    Route::get('/home', [MyPortfolioController::class, 'index'])->name('index');
+//    Route::get('/my-portfolio/contact',[MyPortfolioController::class, 'contact'])->name('contact');
+//    Route::get('/my-portfolio/skill',[MyPortfolioController::class, 'skill'])->name('skill');
+//
+//});
 
-Route::get('/projects', function () {    return view('projects');});
+Route::prefix('my-portfolio')->name('my-portfolio.')->group(function () {
+    Route::get('/', [MyPortfolioController::class, 'index'])->name('index');
+    Route::get('/home', [MyPortfolioController::class, 'index'])->name('index');
+    Route::get('/contact', [MyPortfolioController::class, 'contact'])->name('contact');
+    Route::get('/skill', [MyPortfolioController::class, 'skill'])->name('skill');
+    Route::get('/contact-list', [MyPortfolioController::class, 'contactList'])->name('contact.list');
+});
 
-Route::get('/contact', function () {    return view('contact');});
-Route::get('/contact', function () {    return view('contact');});
+
+//Route::group(['name' => 'vendor-profile', 'as' => 'vendor-profile.'], function () {
+//    Route::get('/vendor-profile', 'Ap\VendorProfileController@index')->name('index');
+//    Route::post('/vendor-profile', 'Ap\VendorProfileController@insert')->name('insert');
+//    Route::get('/vendor-profile/{id}/{view?}/{section_id?}', 'Ap\VendorProfileController@edit')->name('edit');
+//    Route::put('/vendor-profile/{id}', 'Ap\VendorProfileController@update')->name('update');
+//    Route::get('/delete-vendor-profile/{id}', 'Ap\VendorProfileController@delete')->name('delete');
+//});

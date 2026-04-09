@@ -6,6 +6,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -23,26 +24,20 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-portfolio/home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-portfolio/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-portfolio/skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-portfolio/projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-portfolio/contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <!-- 🔷 Content -->
-<div class="container mt-4 mb-5 flex-grow-1">
-    @yield('content')
-</div>
+@yield('content')
 
-<!-- 🔷 Content -->
-<div class="container mt-4 mb-5 flex-grow-1">
-    @yield('content1')
-</div>
-
+<div> </div>
 <!-- 🔻 Footer -->
 <footer class="bg-success text-white text-center p-3 mt-auto">
     <div class="container">
@@ -50,7 +45,9 @@
         <p class="mb-0">
             <a href="#" class="text-white me-2">Facebook</a> |
             <a href="#" class="text-white me-2">LinkedIn</a> |
-            <a href="#" class="text-white">GitHub</a>
+            <a href="#" class="text-white me-2">LinkedIn</a> |
+            <a href="{{ route('contactList') }}">View Message</a>
+
         </p>
     </div>
 </footer>
