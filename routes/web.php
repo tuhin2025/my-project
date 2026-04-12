@@ -36,11 +36,3 @@ Route::prefix('my-portfolio')->name('my-portfolio.')->group(function () {
     Route::get('/contact-list', [MyPortfolioController::class, 'contactList'])->name('contact.list');
 });
 
-
-//Route::group(['name' => 'vendor-profile', 'as' => 'vendor-profile.'], function () {
-//    Route::get('/vendor-profile', 'Ap\VendorProfileController@index')->name('index');
-//    Route::post('/vendor-profile', 'Ap\VendorProfileController@insert')->name('insert');
-//    Route::get('/vendor-profile/{id}/{view?}/{section_id?}', 'Ap\VendorProfileController@edit')->name('edit');
-//    Route::put('/vendor-profile/{id}', 'Ap\VendorProfileController@update')->name('update');
-//    Route::get('/delete-vendor-profile/{id}', 'Ap\VendorProfileController@delete')->name('delete');
-//});

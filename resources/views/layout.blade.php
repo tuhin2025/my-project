@@ -28,7 +28,9 @@
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/skill">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-portfolio/contact-list">View Message</a></li>
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/contact">Contact</a></li>
+
             </ul>
         </div>
     </div>
@@ -46,7 +48,7 @@
             <a href="#" class="text-white me-2">Facebook</a> |
             <a href="#" class="text-white me-2">LinkedIn</a> |
             <a href="#" class="text-white me-2">LinkedIn</a> |
-            <a href="{{ route('contactList') }}">View Message</a>
+{{--            <a href="{{ route('contact.list') }}">View Message</a>--}}
 
         </p>
     </div>
