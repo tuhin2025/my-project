@@ -12,11 +12,12 @@ class Contact extends Model
 
     public $timestamps = false;
 
-//    protected $fillable = [
-//        'sl_id',
-//        'user_name',
-//        'email',
-//        'subject',
-//        'insert_dt'
-//    ];
+    protected $fillable = [
+        'sl_id',
+        'user_name',
+        'email',
+        'subject',
+        'remarks',
+        'insert_dt'
+    ];
 }

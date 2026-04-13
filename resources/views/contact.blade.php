@@ -13,32 +13,34 @@
             <div class="col-md-8">
                 <div class="card shadow-sm p-4 custom-card">
 
-                    <form action="#" method="POST">
+                    <form action="{{ route('my-portfolio.contact.store') }}" method="POST">
+                        @csrf
 
                         <div class="mb-3">
-                            <label class="form-label">Your Name <span class="text-danger">*</span> </label>
-                            <input type="text" class="form-control" placeholder="Enter your name" required>
+                            <label class="form-label">Your Name <span class="text-danger">*</span></label>
+                            <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                                   required>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Subject <span class="text-danger">*</span> </label>
-                            <input type="text" class="form-control" placeholder="Subject" required>
+                            <label class="form-label">Subject <span class="text-danger">*</span></label>
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Message <span class="text-danger">*</span> </label>
-                            <textarea class="form-control" rows="5" placeholder="Write your message" required></textarea>
+                            <label class="form-label">Message <span class="text-danger">*</span></label>
+                            <textarea name="message" class="form-control" rows="5" placeholder="Write your message"
+                                      required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100">
                             Send Message 🚀
                         </button>
-
                     </form>
 
                 </div>
