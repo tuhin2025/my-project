@@ -38,8 +38,9 @@
 
 <!-- 🔷 Content -->
 @yield('content')
+@yield('scripts')
 
-<div> </div>
+<div></div>
 <!-- 🔻 Footer -->
 <footer class="bg-success text-white text-center p-3 mt-auto">
     <div class="container">
@@ -48,7 +49,7 @@
             <a href="#" class="text-white me-2">Facebook</a> |
             <a href="#" class="text-white me-2">LinkedIn</a> |
             <a href="#" class="text-white me-2">LinkedIn</a> |
-{{--            <a href="{{ route('contact.list') }}">View Message</a>--}}
+            {{--            <a href="{{ route('contact.list') }}">View Message</a>--}}
 
         </p>
     </div>
@@ -56,6 +57,21 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if(session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+@endif
+
 
 </body>
 </html>

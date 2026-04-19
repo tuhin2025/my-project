@@ -8,16 +8,18 @@ class Contact extends Model
 {
     protected $table = 'contact';
 
-    protected $primaryKey = 'sl_id';
+    protected $primaryKey = 'id';
 
     public $timestamps = false;
 
     protected $fillable = [
-        'sl_id',
+        'id',
         'user_name',
         'email',
         'subject',
+        'message',
         'remarks',
-        'insert_dt'
+        'insert_dt',
+        'update_dt'
     ];
 }

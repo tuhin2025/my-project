@@ -25,10 +25,12 @@ class MyPortfolioController extends Controller
             'email' => $request->email,
             'subject' => $request->subject,
             'message' => $request->message,
+            'remarks' => $request->remarks,
+            'insert_dt' => now(),
         ]);
 
-        return redirect()->back()->with('success', 'Message sent successfully!');
-//        return redirect()->route('contact')->with('success', 'Message sent successfully!');
+        //  dd($request->all());
+        return redirect()->route('my-portfolio.contact.list')->with('success', 'Message sent successfully!');
     }
 
 
@@ -40,7 +42,29 @@ class MyPortfolioController extends Controller
     public function contactList()
     {
         $contacts = Contact::get();
-//        dd($contacts);
+//         dd($contacts);
         return view('contact_list', compact('contacts'));
+    }
+
+    public function edit($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('contact', compact('contact'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $contact = Contact::findOrFail($id);
+
+        $contact->update([
+            'user_name' => $request->user_name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'remarks' => $request->remarks,
+        ]);
+
+        return redirect()->route('my-portfolio.contact.list')
+            ->with('success', 'Updated successfully!');
     }
 }

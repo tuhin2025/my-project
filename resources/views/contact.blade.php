@@ -13,29 +13,41 @@
             <div class="col-md-8">
                 <div class="card shadow-sm p-4 custom-card">
 
-                    <form action="{{ route('my-portfolio.contact.store') }}" method="POST">
+                    {{--                    <form action="{{ route('my-portfolio.contact.store') }}" method="POST">--}}
+                    <form
+                        action="{{ isset($contact)? route('my-portfolio.contact.update', $contact->ID): route('my-portfolio.contact.store') }}"
+                        method="POST">
                         @csrf
+
 
                         <div class="mb-3">
                             <label class="form-label">Your Name <span class="text-danger">*</span></label>
-                            <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+                            <input type="text" name="user_name" class="form-control"
+                                   value="{{ $contact->USER_NAME ?? '' }}" placeholder="Enter your name"
+                                   required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Email <span class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                            <input type="email" name="email" class="form-control"
+                                   value="{{ $contact->EMAIL ?? '' }}" placeholder="Enter your email"
                                    required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Subject <span class="text-danger">*</span></label>
-                            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                            <input type="text" name="subject" class="form-control"
+                                   value="{{ $contact->SUBJECT ?? '' }}" placeholder="Subject" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Message <span class="text-danger">*</span></label>
-                            <textarea name="message" class="form-control" rows="5" placeholder="Write your message"
-                                      required></textarea>
+                            <textarea name="message" class="form-control" rows="5" required placeholder="Write your Message">{{ $contact->MESSAGE ?? '' }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">remarks <span class="text-danger">*</span></label>
+                            <textarea name="remarks" class="form-control" rows="5" required placeholder="Write your remarks">{{ $contact->remarks ?? '' }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100">
@@ -47,5 +59,18 @@
             </div>
 
         </div>
+
     </div>
+@endsection
+
+@section('scripts')
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ session('success') }}'
+            });
+        </script>
+    @endif
 @endsection

@@ -24,12 +24,14 @@
                                 <th>Subject</th>
                                 <th>Message</th>
                                 <th>Remarks</th>
-                                <th>Date</th>
+                                <th>Insert Date</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             @foreach($contacts as $key => $contact)
+
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $contact->USER_NAME }}</td>
@@ -38,7 +40,13 @@
                                     <td>{{ $contact->MESSAGE }}</td>
                                     <td>{{ $contact->remarks }}</td>
                                     <td>
-                                        {{ $contact->INSERT_DT ? \Carbon\Carbon::parse($contact->INSERT_DT)->format('d M Y') : 'N/A' }}
+                                        {{ $contact->INSERT_DT ? \Carbon\Carbon::parse($contact->INSERT_DT)->format('d-m-Y') : 'N/A' }}
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('my-portfolio.contact.edit', $contact->ID) }}"
+                                           class="btn btn-warning btn-sm">
+                                            Edit
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
