@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class MyPortfolioController extends Controller
 {
@@ -54,17 +55,28 @@ class MyPortfolioController extends Controller
 
     public function update(Request $request, $id)
     {
-        $contact = Contact::findOrFail($id);
+        try {
 
-        $contact->update([
-            'user_name' => $request->user_name,
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'message' => $request->message,
-            'remarks' => $request->remarks,
-        ]);
+            $contact = Contact::findOrFail($id);
 
-        return redirect()->route('my-portfolio.contact.list')
-            ->with('success', 'Updated successfully!');
+            $contact->update([
+                'user_name' => $request->user_name,
+                'email'     => $request->email,
+                'subject'   => $request->subject,
+                'message'   => $request->message,
+                'remarks'   => $request->remarks,
+                'update_dt' => now(),
+            ]);
+
+            return redirect()->route('my-portfolio.contact.list')
+                ->with('success', 'Updated successfully!');
+
+        } catch (\Exception $e) {
+
+            // Log error for debugging
+            Log::error('Contact update failed: '.$e->getMessage());
+
+            return back()->with('error', 'Something went wrong! Please try again.');
+        }
     }
 }

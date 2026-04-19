@@ -29,7 +29,7 @@ Route::prefix('my-portfolio')->name('my-portfolio.')->group(function () {
     Route::get('/skill', [MyPortfolioController::class, 'skill'])->name('skill');
     Route::get('/contact-list', [MyPortfolioController::class, 'contactList'])->name('contact.list');
     Route::get('/contact-edit/{id}', [MyPortfolioController::class, 'edit'])->name('contact.edit');
-    Route::get('/contact-update/{id}', [MyPortfolioController::class, 'update'])->name('contact.update');
+    Route::put('/contact-update/{id}', [MyPortfolioController::class, 'update'])->name('contact.update');
 
 });
 

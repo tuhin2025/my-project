@@ -33,17 +33,17 @@
                             @foreach($contacts as $key => $contact)
 
                                 <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $contact->USER_NAME }}</td>
-                                    <td>{{ $contact->EMAIL }}</td>
-                                    <td>{{ $contact->SUBJECT }}</td>
-                                    <td>{{ $contact->MESSAGE }}</td>
+                                    <td>{{ $contact->id }}</td>
+                                    <td>{{ $contact->user_name }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->subject }}</td>
+                                    <td>{{ $contact->message }}</td>
                                     <td>{{ $contact->remarks }}</td>
                                     <td>
-                                        {{ $contact->INSERT_DT ? \Carbon\Carbon::parse($contact->INSERT_DT)->format('d-m-Y') : 'N/A' }}
+                                        {{ $contact->insert_dt ? \Carbon\Carbon::parse($contact->insert_dt)->format('d-m-Y') : 'N/A' }}
                                     </td>
                                     <td>
-                                        <a href="{{ route('my-portfolio.contact.edit', $contact->ID) }}"
+                                        <a href="{{ route('my-portfolio.contact.edit', $contact->id) }}"
                                            class="btn btn-warning btn-sm">
                                             Edit
                                         </a>

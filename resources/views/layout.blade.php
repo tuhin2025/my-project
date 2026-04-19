@@ -49,7 +49,6 @@
             <a href="#" class="text-white me-2">Facebook</a> |
             <a href="#" class="text-white me-2">LinkedIn</a> |
             <a href="#" class="text-white me-2">LinkedIn</a> |
-            {{--            <a href="{{ route('contact.list') }}">View Message</a>--}}
 
         </p>
     </div>

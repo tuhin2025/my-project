@@ -71,3 +71,9 @@ footer a {
     width: 100%;
     border-radius: 15px;
 }
+
+
+.placeholder-green::placeholder {
+    color: #28a745;
+    opacity: 1;
+}
