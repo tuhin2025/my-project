@@ -10,7 +10,14 @@ class MyPortfolioController extends Controller
 {
     public function index()
     {
-        return view('index');
+//        return view('index');
+        return view('contact_page');
+    }
+
+    public function ajaxList()
+    {
+        $contacts = Contact::all();
+        return response()->json($contacts);
     }
 
     public function contact()

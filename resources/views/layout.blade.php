@@ -29,6 +29,7 @@
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/skill">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/contact-list">View Message</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-portfolio/contact-page">View Message Ajax</a></li>
                 <li class="nav-item"><a class="nav-link" href="/my-portfolio/contact">Contact</a></li>
 
             </ul>
